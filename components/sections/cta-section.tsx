@@ -11,6 +11,7 @@ import { fadeIn, textVariant } from "@/lib/animations";
 export function CTASection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  
 
   return (
     <section 
@@ -20,18 +21,16 @@ export function CTASection() {
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            {...textVariant(0.1).animate}
-            className="text-3xl md:text-4xl font-bold mb-6"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5 }}
+  className="text-3xl md:text-4xl font-bold mb-6"
           >
             Ready to Transform Your Space?
           </motion.h2>
           
           <motion.p
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            {...textVariant(0.2).animate}
+            {...textVariant(0.2)}
             className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto"
           >
             Contact us today for a free consultation and quote. Our team of experts is ready to bring your vision to life.

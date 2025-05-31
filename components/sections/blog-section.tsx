@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { ChevronRight, Calendar } from "lucide-react";
 import { blogPosts } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { staggerContainer, textVariant, cardHoverVariants } from "@/lib/animations";
+import { staggerContainer, textVariant, cardHoverVariants, fadeIn } from "@/lib/animations";
 
 export function BlogSection({ limit = 3 }: { limit?: number }) {
   const ref = useRef(null);
@@ -19,19 +19,19 @@ export function BlogSection({ limit = 3 }: { limit?: number }) {
     <section ref={ref} className="py-16 md:py-24">
       <div className="container px-4 mx-auto">
         <motion.div
+          ref={ref}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          variants={staggerContainer}
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <motion.h2
-            variants={textVariant(0.1).animate}
+            {...textVariant(0.1)}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             Latest Blog Posts
           </motion.h2>
           <motion.p
-            variants={textVariant(0.2).animate}
+            {...textVariant(0.2)}
             className="text-muted-foreground"
           >
             Insights, tips, and updates from the world of interior and technical services
@@ -40,8 +40,8 @@ export function BlogSection({ limit = 3 }: { limit?: number }) {
 
         <motion.div
           initial="initial"
-          animate={isInView ? "animate" : "initial"}
-          variants={staggerContainer}
+          animate="animate"
+          {...staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {displayedPosts.map((post) => (
@@ -89,7 +89,10 @@ export function BlogSection({ limit = 3 }: { limit?: number }) {
         </motion.div>
 
         {limit && blogPosts.length > limit && (
-          <div className="mt-12 text-center">
+          <motion.div
+            className="mt-12 text-center"
+            {...fadeIn("up", 0.3)}
+          >
             <Button 
               variant="outline"
               size="lg"
@@ -99,7 +102,7 @@ export function BlogSection({ limit = 3 }: { limit?: number }) {
                 View All Posts <ChevronRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

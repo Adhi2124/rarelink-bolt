@@ -23,17 +23,16 @@ export function ServicesSection({ limit = 6 }: { limit?: number }) {
         <motion.div
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          variants={staggerContainer}
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <motion.h2
-            variants={textVariant(0.1).animate}
+            {...textVariant(0.1)}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             Our Services
           </motion.h2>
           <motion.p
-            variants={textVariant(0.2).animate}
+            {...textVariant(0.2)}
             className="text-muted-foreground"
           >
             Comprehensive interior and technical contracting services for residential and commercial projects
@@ -43,7 +42,7 @@ export function ServicesSection({ limit = 6 }: { limit?: number }) {
         <motion.div
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          variants={staggerContainer}
+          {...staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {displayedServices.map((service, index) => (

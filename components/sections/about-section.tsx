@@ -49,28 +49,28 @@ export function AboutSection() {
             {...fadeIn("right", 0.3)}
           >
             <motion.h2
-              {...textVariant(0.1).animate}
+              {...textVariant(0.1)}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               About RareLinks Technical Services
             </motion.h2>
             
             <motion.p
-              {...textVariant(0.2).animate}
+              {...textVariant(0.2)}
               className="text-muted-foreground mb-4"
             >
               RareLinks Technical Services LLC is a Dubai-based company specializing in comprehensive interior and technical contracting services. We offer end-to-end solutions for residential and commercial projects – from supplying skilled manpower to executing full renovations.
             </motion.p>
             
             <motion.p
-              {...textVariant(0.3).animate}
+              {...textVariant(0.3)}
               className="text-muted-foreground mb-6"
             >
               Our team brings together experienced engineers, technicians, and craftsmen dedicated to high-quality workmanship and client satisfaction. Operating in the UAE, we adhere to local regulations and international standards to ensure safety and excellence in every project.
             </motion.p>
 
             <motion.div
-              {...textVariant(0.4).animate}
+              {...textVariant(0.4)}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
             >
               <div className="bg-gray-50 p-4 rounded-lg">
@@ -88,7 +88,7 @@ export function AboutSection() {
             </motion.div>
 
             <motion.div
-              {...textVariant(0.5).animate}
+              {...textVariant(0.5)}
             >
               <Button 
                 size="lg"

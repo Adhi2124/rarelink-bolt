@@ -32,9 +32,7 @@ export function SiteHeader() {
 
   return (
     <motion.header
-      variants={navVariants}
-      initial="initial"
-      animate="animate"
+      {...navVariants}
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled

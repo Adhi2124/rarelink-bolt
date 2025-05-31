@@ -24,21 +24,21 @@ export function ContactSection() {
             {...fadeIn("left", 0.3)}
           >
             <motion.h2
-              {...textVariant(0.1).animate}
+              {...textVariant(0.1)}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               Get In Touch
             </motion.h2>
             
             <motion.p
-              {...textVariant(0.2).animate}
+              {...textVariant(0.2)}
               className="text-muted-foreground mb-8"
             >
               Have questions about our services or want to discuss your project? Reach out to us and our team will get back to you shortly.
             </motion.p>
             
             <motion.div
-              {...textVariant(0.3).animate}
+              {...textVariant(0.3)}
               className="space-y-4 mb-8"
             >
               <div className="flex items-start">
@@ -99,7 +99,7 @@ export function ContactSection() {
             </motion.div>
             
             <motion.div
-              {...textVariant(0.4).animate}
+              {...textVariant(0.4)}
             >
               <Button 
                 size="lg"

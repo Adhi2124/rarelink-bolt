@@ -16,17 +16,17 @@ export function TestimonialsSection() {
         <motion.div
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          variants={staggerContainer}
+          {...staggerContainer}
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <motion.h2
-            variants={textVariant(0.1).animate}
+            {...textVariant(0.1)}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             Client Testimonials
           </motion.h2>
           <motion.p
-            variants={textVariant(0.2).animate}
+            {...textVariant(0.2)}
             className="text-gray-300"
           >
             See what our clients say about our services and workmanship
@@ -36,7 +36,7 @@ export function TestimonialsSection() {
         <motion.div
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          variants={staggerContainer}
+          {...staggerContainer}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
         >
           {testimonials.map((testimonial) => (
